@@ -1,0 +1,49 @@
+﻿<!-- *** PART 5 (moved template in comp1.html to new file: comp1-template.html) -->
+@using MvcVueApp1.Models
+
+@Helpers.LoadFile("~/Vue/templates/comp1-template.html")
+@Helpers.LoadFile("~/Vue/components/comp1.html")
+@Helpers.LoadFile("~/Vue/templates/maintemplate.html")
+@Helpers.LoadFile("~/Vue/mainapp/mainapp1.html")
+
+
+<!-- *** PART 3 & 4 (separate parts + eliminate "webpack" and load files in right order) -->
+<!-- using Html.Raw -->
+@*@Html.Raw(File.ReadAllText(Server.MapPath("~/Vue/components/comp1.html")))
+    @Html.Raw(File.ReadAllText(Server.MapPath("~/Vue/templates/maintemplate.html")))
+    @Html.Raw(File.ReadAllText(Server.MapPath("~/Vue/mainapp/mainapp1.html")))*@
+<!-- using Models.Helpers (easier to write than Html.Raw(.....) -->
+@*@using MvcVueApp1.Models
+
+    @Helpers.LoadFile("~/Vue/components/comp1.html")
+    @Helpers.LoadFile("~/Vue/templates/maintemplate.html")
+    @Helpers.LoadFile("~/Vue/mainapp/mainapp1.html")*@
+
+<!-- *** PART 1 & 2 -->
+@*<script>
+        Vue.component('comp1', {
+            template: '<span>{{foo}}</span>',
+            props: ['foo'],
+        });
+    </script>
+
+    <div id="vueapp">
+        <input type="text" v-model="firstName" />
+        <br />
+        <span>text from input tag (here)</span>
+        <p>{{firstName}}</p>
+
+        <br />
+        <span>text from input component comp1</span>
+        <br/>
+        <comp1 v-bind:foo="firstName"></comp1/>
+    </div>
+
+    <script>
+        var mainVue = new Vue({
+            el: '#vueapp',
+            data: {
+                firstName: '',
+            },
+        });
+    </script>*@

@@ -1,0 +1,11 @@
+﻿<div id="vueapp">
+    <input type="text" v-model="firstName" />
+    <br />
+    <span>text from input tag (here)</span>
+    <p>{{firstName}}</p>
+
+    <br />
+    <span>text from input component comp1</span>
+    <br />
+    <comp1 v-bind:foo="firstName"></comp1>
+</div>

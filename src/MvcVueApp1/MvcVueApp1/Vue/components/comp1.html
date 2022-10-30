@@ -1,0 +1,22 @@
+﻿<!-- *** PART 5 (beginning, then moved in comp1-template.html)-->
+<!--<template id="comp1-template">
+    <div>
+        <span>{{foo}}</span>
+    </div>
+</template>-->
+
+<script>
+    Vue.component('comp1', {
+        template: '#comp1-template',
+        props: ['foo'],
+    });
+</script>
+
+
+<!-- *** PART 3 & 4 -->
+<!--<script>
+    Vue.component('comp1', {
+        template: '<span>{{foo}}</span>',
+        props: ['foo'],
+    });
+</script>-->
